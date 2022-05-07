@@ -126,15 +126,18 @@ Analizando la $R^{MAX}$ podemos concluir 3 cosas:
 ## c) 
 **La capacidad de compromiso limitada conduce a la ineficiencia (en relación con el caso en que no hay fricciones) si** $\gamma>1+r$ **pero el proyecto no se lleva a cabo. Describa si cada uno de los siguientes puede hacer que un proyecto con** $\gamma> 1 + r$ **no se lleve a cabo:**
 
-### i) Una caída en la riqueza del emprendedor, W.
+### i) 
+**Una caída en la riqueza del emprendedor, W.**
 
 Si W cae, la condicion (1+r)(1-W) aumenta, lo que podria generar que $R^{MAX}$<(1+r)(1-W) y por lo tanto, que no se lleve a cabo el proyecto 
 
-### ii) Un aumento en la fracción del proyecto que el empresario puede ocultar, 1-f (es decir, una caída en f). 
+### ii) 
+**Un aumento en la fracción del proyecto que el empresario puede ocultar, 1-f (es decir, una caída en f).** 
 
 Sabemos que $R^{MAX}$ = f$\gamma$, por lo que si f disminuye f$\gamma$ cae, lo que puede generar que $R^{MAX}$<(1+r)(1-W) y por lo tanto, que no se lleve a cabo el proyecto 
 
-### iii) Un aumento en el riesgo idiosincrásico. Concretamente, suponga que, la producción del proyecto se distribuye uniformemente en $[\gamma-b, \gamma+b]$ en lugar de uniformemente en $[0, 2\gamma]$, y hay un aumento en b.
+### iii)
+**Un aumento en el riesgo idiosincrásico. Concretamente, suponga que, la producción del proyecto se distribuye uniformemente en** $[\gamma-b, \gamma+b]$ **en lugar de uniformemente en** $[0, 2\gamma]$, **y hay un aumento en b.**
 
 Ahora tenemos que $X~U(\gamma-b, \gamma+b)$ y por lo tanto, $\hat{X}= fX~ U(f(\gamma-b), f(\gamma+b))^2$ 
 
