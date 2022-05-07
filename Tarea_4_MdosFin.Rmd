@@ -201,7 +201,7 @@ Ya que esto no se cumple, entonces podemos concluir que las distribuciones incon
 **Explique en una oración o dos por qué el análisis del texto, que usa las propiedades de las distribuciones lognormales, es correcto.**
 
 Esto se hace para simplicar los calculos del valor esperado del consumo de los agentes, y con ellos poder encontrar las demandas optimas, dado que asumimos que el consumo se distribuye con una normal. 
-Ya que la utilidad de cada agente es de la forma de una aversion al riesgo constante absoluta $U(C) = e^{-2\gamma C}, \gamma >0$, resolver el valor esperado de esta tipo de utilidad  complicaria el analisis de los resultados, por ello,  al utilizar las propiedades de las distribuciones lognormales, podemos conocer los valores de la media y varianza y con ellos podemos obtener una aproximacion de la utilidad esperada, que es la media del consumo menos $\gamma$ veces su varianza, $[r+ E_t[p_{t+1}]-(1+r)p_t]X_t^a - \gamma(X_t^a)^2V$, lo que permite derivar respecto a $X_t^a$ y obtener las demandas optimas y poder resolve nuestro modelo.  
+Ya que la utilidad de cada agente es de la forma de una aversion al riesgo constante absoluta $U(C) = e^{-2\gamma C}, \gamma >0$, resolver el valor esperado de esta tipo de utilidad  complicaria el analisis de los resultados, por ello,  al utilizar las propiedades de las distribuciones lognormales, podemos conocer los valores de la media y varianza y con ellos podemos obtener una aproximacion de la utilidad esperada, que es la media del consumo menos $\gamma$ veces su varianza, $[r+ E_t[p_{t+1}]-(1+r)p_t]X_t^a - \gamma(X_t^a)^2V$, lo que permite derivar respecto a $X_t^a$ y obtener las demandas optimas y poder resolver nuestro modelo.  
 
 
 # Ejercicio 2. 
