@@ -41,6 +41,168 @@ pacman::p_load(tidyverse,
                knitr, tinytex, reshape, siebanxicor, lubridate, scales, reshape2,
                clusterGeneration, xtable, rsq, psych, jtools, inegiR, siebanxicor)
 ```
+# Instrucciones
+
+Realice los siguientes ejercicios con el equipo señalado.
+
+# Ejercicio 1
+
+Resuelva los ejercicios 10.4 y 10.5 (5a edición). Realice estos con ayuda de su laboratorista y entregue las soluciones escritas a máquina, utilizando
+LaTeX. [1 hora, 1 punto cada pregunta] 
+
+# Romer 10.4
+Un enfoque más simple para los costos de agencia: compromiso limitado. (Lacker y Weinberg, 1989; Holmström y Tirole, 1998) Considere el modelo de la Sección 10.2 con una fricción diferente: no hay costo de verificar la producción, pero el empresario puede ocultar la fracción $1-f$ de la producción del proyecto al inversionista (con $0 \geq f \geq 1$). Por lo tanto, el emprendedor solo puede prometer de manera creíble pagar la fracción f de la producción del proyecto.
+
+## a) 
+**Considere un proyecto con el pago esperado** $\gamma$ **que excede** $1 + r$. **¿Cuál es la condición para llevar a cabo el proyecto?**
+
+El modelo asume 4 cosas: 1) La producción del proyecto $(X)$ se distribuye uniformemente sobre [0; 2$\gamma$], 2) El valor esperado de la produccion $E(x)=\gamma$, 3) El empresario y los inversores son neutrales al riesgo, 4) Existe una tecnología sin riesgo o información asimétrica que produce una tasa de retorno de r con seguridad, y 5) Los inversores externos son competitivos. 
+
+El proyecto sera deseable socialmente si $\gamma>1+r$, como supone el problema. 
+
+El empresario realizara el proyecto si la ganancia de este ($\gamma$) menos el pago al inversionista (R(D)) es mayor al escenario de invertir su riqueza (W) a una tasa r en otro proyecto, es decir:
+$$ \gamma - R(D)>(1+r)W $$
+$$ R(D) \leq \gamma - (1+r)W$$
+De esta condicion se obtiene nuestro supuesto $\gamma>1+r$, por lo tanto, sabemos que el empresario realizara el proyecto.
+$$ \Rightarrow \gamma-(1-r)+(1+r)W > (1+r)W$$
+$$ \Rightarrow \gamma - (1-r)> 0$$
+$$ \Rightarrow \gamma> (1+r)$$
+
+Asimismo, al igual que el empresario, el inversionista aceptara el proyecto si los rendimientos esperados  son al menos el valor de sus pagos esperado si invirtiera en otro proyecto a una tasa r: 
+$$ R(D)\geq (1-W)(1+r)$$ 
+El punto en el que se maximiza la funcion de rendmientos esperados del inversor es en 2$\gamma$-c (donde 2$\gamma$ es la producción máxima posible del proyecto por la distribución supuesta, y c es el costo de verificación); en nuestro caso el punto máximo de esta función es 2$\gamma f$, pues supusimos que $c=0$ y se nos plantea que sólo la fracción $\gamma$f se puede pagar. 
+Con base en la ecuacion 10.8 del Romer, el rendimiento maximo esperado por el inversionista es: 
+$$ R^{MAX} = R(2\gamma f -c) \Rightarrow \left[ \frac{2\gamma f-c}{2\gamma f}\right]^2 \gamma f \Rightarrow \left[\frac{2\gamma f}{2\gamma f}\right]^2 \gamma f \Rightarrow \gamma f$$
+Por lo tanto, 
+$$R^{MAX}= \gamma f \geq (1-W)(1+r)$$
+
+De ambas condiciones, podemos ver que el proyecto se realizara si se cumple lo siguiente:
+$$ (1-W)(1+r) \leq R(D) \leq \gamma - (1+r)W$$ Con $$R^{MAX}= \gamma f$$
+
+## b) 
+**Suponga que la condición que encontró en la parte (a) se satisface con una desigualdad estricta.**
+
+Ahora que nos aseguramos que el proyecto será llevado a cabo, tenemos que definir el pago realizado al inversionista en funcion de los resultados del proyecto, es decir, los valores que tomara nuestra variable R(D). 
+De nuestro inciso anterior denotamos a X como la produccion del proyecto, ahora definiremos a $\hat{X}$ como el producto reportado, donde $\hat{X}$= fX. Asimismo, por el inciso a) sabemos que $\hat{X}$~ U(0,2f$\gamma$)
+
+El valor de nuestra R(D), esta en funcion de dos escenarios. 
+
+El primer caso, cuando D es menor o igual que la produccion maxima (2f$\gamma$), en este caso obtenemos una utilidad esperada, pues hay dos opciones: la probabilidad de que la produccion sea mayor o igual que D, donde el inversionista recibira la cantidad D, o la probabilidad de que la produccion sea menor que D, donde el inversionista recibira todo la produccion. 
+
+El segundo caso, cuando D es mayor a la produccion maxima, donde en este caso recibira toda la produccion, ya que el ingreso del proyecto siempre sera menor a D. 
+
+Construyendo estos casos de forma matematica tenemos:
+
+Caso 1: 
+$$E(D \leq 2f\gamma) = E(\hat{X}| \hat{X} \leq D)P(\hat{X} \leq D) + E(D)| \hat{X}>D)P(\hat{X} \geq D)$$
+$$\Rightarrow \frac{D}{2}\frac{D}{2f\gamma} + D\frac{2f\gamma - D}{2f\gamma} \Rightarrow \frac{D^2}{4f\gamma} + D\left( 1- \frac{D}{2f\gamma}\right) \Rightarrow D- D\frac{D^2}{4f\gamma}$$ 
+$$ \Rightarrow E(D< 2f\gamma)= D\left(1-\frac{D}{4f\gamma}\right)$$ 
+
+Caso 2:
+D > 2f$\gamma$, en este caso se le paga al inversionista la proporcion de la produccion que se prometio pagar: (f $\gamma$), que por el inciso anterior sabemos que es el rendimiento maximo que puede obtener el inversionista.
+
+En resumen tenemos que el rendimiento del inversionista puede ser el siguiente:
+
+\begin{equation}
+	\label{eq:aqui-le-mostramos-como-hacerle-la-llave-grande}
+	R(D) = \left\{
+	\begin{array}{ll} 
+		D\left(1- \frac{D}{4f\gamma}\right) \hspace{1cm} \mathrm{D\leq2f\gamma} \\
+		f\gamma \hspace{2.6cm}  \mathrm{D>2f\gamma}
+	\end{array}
+	\right.
+\end{equation} 
+
+Nota: Esta $R^{MAX}$ tambien se puede obtener derivando el caso uno, $R'(D) \Rightarrow 2f\gamma = D^*$ y sustituyendo la D* optima encontrada en la funcion: $D\left(1- \frac{D}{4f\gamma}\right)$, obteniendo que $R(D^*) = R^{MAX}= f\gamma$  
+
+Analizando la $R^{MAX}$ podemos concluir 3 cosas:
+
+1. Si $R^{MAX}$<(1+r)(1-W) el inversionista no le presta a la empresa
+
+2. Si $R^{MAX}$=(1+r)(1-W) habra varios valores de D que puedan otorgar este pago minimo requerido. Sin embargo, en el equilibrio competitivo, sera la D minima la que define este rendimiento, por el caso dos sabemos que esta D=2f$\gamma$, es cuando el pago esperado es menor a la produccion maxima del proyecto, $R^{MAX}= f\gamma$.
+
+3. Si $R^{MAX}$>(1+r)(1-W) hay un valor unico de D, que le otorga al inversionista su pago minimo requerido. Es en este caso donde el contraro es unico. 
+
+## c) 
+**La capacidad de compromiso limitada conduce a la ineficiencia (en relación con el caso en que no hay fricciones) si** $\gamma>1+r$ **pero el proyecto no se lleva a cabo. Describa si cada uno de los siguientes puede hacer que un proyecto con** $\gamma> 1 + r$ **no se lleve a cabo:**
+
+### i) Una caída en la riqueza del emprendedor, W.
+
+Si W cae, la condicion (1+r)(1-W) aumenta, lo que podria generar que $R^{MAX}$<(1+r)(1-W) y por lo tanto, que no se lleve a cabo el proyecto 
+
+### ii) Un aumento en la fracción del proyecto que el empresario puede ocultar, 1-f (es decir, una caída en f). 
+
+Sabemos que $R^{MAX}$ = f$\gamma$, por lo que si f disminuye f$\gamma$ cae, lo que puede generar que $R^{MAX}$<(1+r)(1-W) y por lo tanto, que no se lleve a cabo el proyecto 
+
+### iii) Un aumento en el riesgo idiosincrásico. Concretamente, suponga que, la producción del proyecto se distribuye uniformemente en $[\gamma-b, \gamma+b]$ en lugar de uniformemente en $[0, 2\gamma]$, y hay un aumento en b.
+
+Ahora tenemos que $X~U(\gamma-b, \gamma+b)$ y por lo tanto, $\hat{X}= fX~ U(f(\gamma-b), f(\gamma+b))^2$ 
+
+Con esta informacion obtenemos 
+$$  F_{\hat{X}} (x) = \frac{x}{f(\gamma +b)- f(\gamma -b)} =\frac{x}{2fb}$$
+
+Si D $\leq$ f($\gamma$-b), la empresa le paga a la inversionista D con probabilidad 1. 
+
+Si f($\gamma$-b) < D $\leq$ f($\gamma$+b), tenemos dos casos, como en el primer inciso: la probabilidad de que la produccion ($\hat{X}$) sea mayor o igual que D, donde el inversionista recibira la cantidad D, o la probabilidad de que la produccion sea menor que D, donde el inversionista recibira toda la produccion. 
+
+$$E(D \leq 2f\gamma) = E(\hat{X}| \hat{X} \leq D)P(\hat{X} \leq D) + E(D)| \hat{X}>D)P(\hat{X} \geq D)$$
+$$\Rightarrow \frac{f(\gamma-b + D)}{2} \frac{D}{2fb} + D\frac{2fb-D}{2fb} \Rightarrow \frac{D}{4fb} (f\gamma + 3fb -D)$$
+$$ E(D \leq 2f\gamma) = D\left(\frac{3}{4} + \frac{f\gamma -D}{4fb}\right)$$
+
+En resumen tenemos que el rendimiento del inversionista en este nuevo caso puede ser el siguiente:
+
+\begin{equation} 
+	R(D) = \left\{
+	\begin{array}{ll} 
+		D\left(\frac{3}{4} +\frac{f\gamma -D}{4fb}\right) \hspace{1cm} \mathrm{f(\gamma-b)< D \leq f(\gamma+b)} \\
+		D \hspace{3.1cm}  \mathrm{ D \leq f (\gamma-b)}
+	\end{array}
+	\right.
+\end{equation} 
+
+Ante un aumento de b, no se cancelaria el proyecto, quiza solo en el caso donde D=f($\gamma$-b), ante el cambio de b a b' (con b'<b) D pasaria a ser mayor a f($\gamma$-b') cambiando solo los rendimientos que recibiria el inversionista. Sin embargo, este aumento de b tambien aumenta el nivel maximo de produccion, lo que implica que si antes D<f($\gamma$ +b), ahora el proyecto resultaria socialmente deseable. 
+
+\pagebreak 
+
+# Romer 10.5
+
+## a) 
+**Demuestre que en el modelo analizado en las ecuaciones (10.15)-(10.23) de la sección 10.4,las distribuciones incondicionales de** $C_{2t}^{a}$ y  $C_{2t}^{n}$ **no son normales.**
+
+Los supuestos del modelo para que exista un equilibrio estacionario son que el precio del activo sea lineal en las perturbaciones y que la distribución del consumo de los agentes en el segundo periodo **condicionada por su información en el primer periodo, sea normal**
+
+Asimismo, se suponen dos cosas: que las perturbaciones del modelo (la diferencia del precio del activo percibida por cada agente ruidoso respecto del precio fundamental) se distribuyen de forma normal, y es igual en cada periodo. Además, se supone que la utilidad de los agentes adopta la forma de aversión al riesgo constante absoluta $U(C) = e^{-2\gamma C}, \gamma >0$, estos supuestos se realizan con el objetivo de que los resultados sobre la utilidad del agente y sobre su consumo ante las perturbaciones o los choques se distribuyan de manera normal. 
+
+Sabemos de la ecuación 10.15 que podemos definir el consumo de la siguiente forma: 
+
+$$ C_{2t}^a = r (X_t^a - p_tX_t^a) + p_{t+1} X_t^a - p_tX_t^a$$
+$$\Rightarrow =[r + p_{t+1} - (1+r)p_t] X_t^a$$
+
+Aunque tengamos una variable desconocido en la ecuacion es $p_{t+1}$, podemos resolver resolver la ecuacion para $X_t^a$, por el supuesto de que el consumo de los agentes en el segundo periodo esta condicionado por su información en el primer periodo, pues de esta forma podemos obtener la media y la varianza de $C_{2t}^a$, obteniendo que la media es $[r + E_t[p_{t+1}] - (1+r)p_t] X_t^a$ y su varianza $= (X_t^a)^2X$, de esta forma, al utilizar el valor esperado de los precios del periodo en t+1, eliminamos la variable desconocida y podemos obtener el consumo del agente. Asimismo, al conocer el consumo, se puede maximizar la utilidad esperada del agente, obteniendo como reusltado la demanda optima del agente racional ($X_t^a$) y el agente ruidoso ($X_t^n$):
+
+$$ X_t^a= \frac{r+ E_t[p_{t+1}]-(1+r)p_t}{2\gamma V}$$ 
+y
+$$ X_t^n= \frac{r+ E_t[p_{t+1}] +\eta_t -(1+r)p_t}{2\gamma V}$$ 
+
+Es sustituyendo estas demandas en la ecuacion 10.19 de vaciado del mercado: $(1-f)X_t^a +fX_t^n=1$ que podemos obtener los precios del periodo uno:
+
+$$ p_t = 1- \frac{2\gamma}{r}\frac{f^2}{(1+r)^2} V_n + \frac{f\eta_t}{1-r}$$
+
+Lo que muestra el primer supuesto, de que el precio del activo es linea a las perturbaciones o choques ($\eta_t$) 
+
+Por lo tanto, en el modelo descrito en el Romer, al cumplirse que $p_{t+1}$ es lineal a las perturbaciones ($\eta_t$) y al poder encontrar las demandas optimas por condicionar el consumo de los agentes en el segundo periodo (t+1) a la información del primer periodo (t), se cumple que el consumo se distribuye de manera normal.
+
+Sin embargo, como vemos en nuestra recapitulacion del modelo del Romer, al no poder condicionar el consumo del periodo t+1 a la informacion del periodo t, no podremos deshacernos de la  variable desconocida (los precios en t+1), esto ocurre debido a que los precios depende de la informacion y el tiempo, y si no les asignamos a estas variables valores fijos, el valor de $p_{t+1}$ sera desconocido. Esta situacion nos impide conocer el consumo del agente en el segundo periodo $C_{2t}^a$ y la utilidad esperada. Si no podemos realizar este supuesto, por lo tanto, no podremos obtener las demandas optimas de los agentes racionales y de los agentes ruidosos ($X_t^a$ y $X_t^n$), ni los precios del periodo t lineales a las perturbaciones ($\eta_t$). 
+
+Ya que esto no se cumple, entonces podemos concluir que las distribuciones incondicionales de $C_{2t}^{a}$ y  $C_{2t}^{n}$ no son normales.
+
+
+## b) 
+**Explique en una oración o dos por qué el análisis del texto, que usa las propiedades de las distribuciones lognormales, es correcto.**
+
+Esto se hace para simplicar los calculos del valor esperado del consumo de los agentes, y con ellos poder encontrar las demandas optimas, dado que asumimos que el consumo se distribuye con una normal. 
+Ya que la utilidad de cada agente es de la forma de una aversion al riesgo constante absoluta $U(C) = e^{-2\gamma C}, \gamma >0$, resolver el valor esperado de esta tipo de utilidad  complicaria el analisis de los resultados, por ello,  al utilizar las propiedades de las distribuciones lognormales, podemos conocer los valores de la media y varianza y con ellos podemos obtener una aproximacion de la utilidad esperada, que es la media del consumo menos $\gamma$ veces su varianza, $[r+ E_t[p_{t+1}]-(1+r)p_t]X_t^a - \gamma(X_t^a)^2V$, lo que permite derivar respecto a $X_t^a$ y obtener las demandas optimas y poder resolve nuestro modelo.  
+
 
 # Ejercicio 2. 
 
@@ -701,3 +863,20 @@ La deuda interna privada a corto plazo muestra una tendencia al alza a partir de
 Se obserca que la deuda privada a largo plazo desciende al inicio de la contingencia sanitaria para que, a unos meses del inicio de la pandemia inicie una tendencia de crecimiento que parece continuar al final de la serie en diciembre de 2021.
 
 En general se concluye que la deuda a corto plazo reaccionó antes, la deuda a largo plazo presenta un lag para iniciar su crecimiento, la causa probable de este fenómeno es que resulta más simple y rápido obtener financiamiento a corto plazo que a largo plazo.
+
+# Ejercicio 4. 
+
+**Proponga una mejora al archivo Diccionario de Economía utilizando github.**
+Sugerimos adiciones de términos al diccionario, las cuales anunciaremos a continuación: 
+
+**INFORMACIÓN ASIMÉTRICA**: en un mercado perfecto, compradores y vendedores tienen la misma información, logrando acordar un precio justo en una operación de compraventa. Sin embargo, cuando una de las partes tiene más información que la otra sobre el producto o servicio de la compraventa, se le denomina *información asimétrica*.
+Cuando esta situación se produce, impide a una de las partes tomar la mejor decisión, ya que se encuentra en una situación de incertidumbre que puede generar un resultado ineficiente en el mercado.  Este problema se encuentra en distintos ámbitos de la actividad económico como los de inversión, finanzas o consumo.
+
+**ARBITRAJE**: Práctica que consiste en comprar un bien donde resulta más barato y venderlo en otro mercado (geográfico) donde su precio es mayor. Como consecuencia de esta práctica a nivel internacional –y a similitud del “principio de los vasos comunicantes” de la física-, el precio del bien en los distintos mercados tiende a nivelarse.
+
+**BURBUJA FINANCIERA**: Fenómeno económico que consiste en el aumento desproporcionado del precio de algún producto o activo, separándose de su valor fundamental. También se le conoce como burbuja económica, burbuja de mercado o burbuja especulativa. 
+Esta rápida expansión del precio del activo está basada en un aumento de las expectativas de rentabilidad, lo que impulsa el incremento de la inversión, la entrada de capitales al mercado en cuestión y con ello a la valoración de los activos, lo que finalmente ocasiona una sobreinversión en el sector y conduce finalmente a su derrumbe.
+
+**BASE MONETARIA**: Esta constituida por todo el dinero legal en circulación (es decir, billetes y monedas), sumado a las reservas de los bancos comerciales en el banco central. En otras palabras, es el dinero legal emitido por el Banco Central de un país y puede estar en manos del público, o en la caja de los distintos bancos comerciales del sector financiero del país. La base monetaria es monitoreada por el banco central y constituye su principal vía para controlar la oferta monetaria.
+Con base en datos del Banco de México, en nuestro país, el comportamiento de la base monetaria es muy similar al de los billetes y monedas en circulación debido a que, en general, los bancos no intentan mantener saldos positivos en sus cuentas en el instituto emisor. 
+
